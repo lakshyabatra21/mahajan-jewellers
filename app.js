@@ -1974,10 +1974,10 @@ function initParticles() {
 // 3. Category Navigation
 function renderCategories() {
   const categoriesList = [
-    { name: "Necklaces", desc: "Chokers, bridal sets and haras", img: "/Products/Necklace.jpeg" },
-    { name: "Earrings", desc: "Jhumkas, studs and drop pairs", img: "/Products/Earrings/earring2.png" },
-    { name: "Mangalsutra", desc: "Traditional holy thread chains", img: "/Products/New folder/WhatsApp Image 2026-07-02 at 2.47.26 PM.png" },
-    { name: "Pendant Sets", desc: "Lightweight gemstone locket pairs", img: "/Products/New folder/WhatsApp Image 2026-07-02 at 2.22.49 PM.png" }
+    { name: "Necklaces", desc: "Chokers, bridal sets and haras", img: "Products/Necklace.jpeg" },
+    { name: "Earrings", desc: "Jhumkas, studs and drop pairs", img: "Products/Earrings/earring2.png" },
+    { name: "Mangalsutra", desc: "Traditional holy thread chains", img: "Products/New folder/WhatsApp Image 2026-07-02 at 2.47.26 PM.png" },
+    { name: "Pendant Sets", desc: "Lightweight gemstone locket pairs", img: "Products/New folder/WhatsApp Image 2026-07-02 at 2.22.49 PM.png" }
   ];
 
   const grid = document.getElementById("categories-grid");
@@ -3041,7 +3041,7 @@ window.showAddProductForm = function() {
       </div>
       <div class="form-group">
         <label class="form-label">Image URL / Path</label>
-        <input type="text" id="admin-p-image" class="form-input" value="/images/logo.jpg" required>
+        <input type="text" id="admin-p-image" class="form-input" value="images/logo.jpg" required>
       </div>
       <div class="form-group">
         <label class="form-label">Product Tag</label>
