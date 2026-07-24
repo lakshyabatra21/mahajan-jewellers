@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.1";
+const APP_VERSION = "1.1.2";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
@@ -1620,14 +1620,14 @@ function initTicker() {
 
   const tickerItems = [
     "images/hero_front.png",
-    "/Products/WhatsApp Image 2026-07-19 at 2.19.18 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 2.14.33 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 2.11.15 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 2.06.22 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 1.57.53 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 1.48.27 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 1.44.24 PM.jpeg",
-    "/Products/WhatsApp Image 2026-07-19 at 1.39.26 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 2.19.18 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 2.14.33 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 2.11.15 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 2.06.22 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 1.57.53 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 1.48.27 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 1.44.24 PM.jpeg",
+    "Products/WhatsApp Image 2026-07-19 at 1.39.26 PM.jpeg",
   ];
 
   const fullTrack = [...tickerItems, ...tickerItems, ...tickerItems];
@@ -1714,7 +1714,7 @@ function initParticles() {
     }
   }
 
-  // Particle definition (drifting dust/energy nodes in soft dark tone)
+  // Glistening Diamond & Gold twinkling sparkles with 3D depth
   class Particle {
     constructor() {
       this.reset();
@@ -1723,45 +1723,101 @@ function initParticles() {
     reset() {
       this.x = Math.random() * width;
       this.y = height + 10;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = -(Math.random() * 0.4 + 0.1);
-      this.radius = Math.random() * 1.5 + 0.5;
+      this.vx = (Math.random() - 0.5) * 0.35;
+      this.vy = -(Math.random() * 0.5 + 0.15);
+      this.radius = Math.random() * 2.0 + 0.8;
       this.alpha = 0;
-      this.targetAlpha = Math.random() * 0.25 + 0.05;
-      this.speedAlpha = Math.random() * 0.005 + 0.002;
+      this.targetAlpha = Math.random() * 0.6 + 0.15; // brighter opacity
+      this.speedAlpha = Math.random() * 0.008 + 0.003;
+      
+      // Sparkling twinkling cycle params
+      this.twinklePhase = Math.random() * Math.PI * 2;
+      this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+      
+      // Choose luxurious gold, diamond-white or sapphire-tint color
+      const colors = [
+        "rgba(212, 175, 55, ",  // Gold
+        "rgba(255, 255, 255, ", // Diamond White
+        "rgba(224, 231, 255, ", // Ice Indigo
+        "rgba(192, 192, 192, "  // Silver
+      ];
+      this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      // Sparkle style (star or circle)
+      this.isStar = Math.random() < 0.25;
+      this.spikes = 4;
+      this.innerRad = this.radius * 0.3;
+      this.outerRad = this.radius * 2.5;
     }
     update() {
       this.x += this.vx;
       this.y += this.vy;
+      this.twinklePhase += this.twinkleSpeed;
       
-      // Fade in at bottom, fade out at top
+      // Fade in on birth
       if (this.alpha < this.targetAlpha) {
         this.alpha += this.speedAlpha;
       }
       
-      if (this.y < 0 || this.x < 0 || this.x > width) {
+      if (this.y < -20 || this.x < -20 || this.x > width + 20) {
         this.reset();
       }
     }
     draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(15, 23, 42, ${this.alpha})`;
-      ctx.fill();
+      // Calculate twinkling alpha using sine modulation
+      const twinkleAlpha = Math.max(0.05, this.alpha * (0.6 + 0.4 * Math.sin(this.twinklePhase)));
+      const color = this.baseColor + twinkleAlpha + ")";
+      
+      if (this.isStar) {
+        // Draw 4-point glowing star
+        ctx.save();
+        ctx.shadowBlur = Math.random() < 0.1 ? 8 : 4;
+        ctx.shadowColor = this.baseColor.includes("212") ? "#d4af37" : "#ffffff";
+        
+        let cx = this.x;
+        let cy = this.y;
+        let rot = Math.PI / 2 * 3;
+        let step = Math.PI / this.spikes;
+        
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - this.outerRad);
+        for (let i = 0; i < this.spikes; i++) {
+          let x = cx + Math.cos(rot) * this.outerRad;
+          let y = cy + Math.sin(rot) * this.outerRad;
+          ctx.lineTo(x, y);
+          rot += step;
+          
+          x = cx + Math.cos(rot) * this.innerRad;
+          y = cy + Math.sin(rot) * this.innerRad;
+          ctx.lineTo(x, y);
+          rot += step;
+        }
+        ctx.lineTo(cx, cy - this.outerRad);
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.restore();
+      } else {
+        // Draw standard soft circle particle
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
     }
   }
 
-  // Crystalline 3D-like rotating wireframe forms in soft dark tone
+  // Golden rotating wireframe 3D Octahedron gems
   class Crystal {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
       this.z = Math.random() * 100 + 50; // depth
-      this.size = Math.random() * 40 + 20;
+      this.size = Math.random() * 35 + 20;
       this.rotX = Math.random() * Math.PI;
       this.rotY = Math.random() * Math.PI;
-      this.rotSpeedX = (Math.random() - 0.5) * 0.005;
-      this.rotSpeedY = (Math.random() - 0.5) * 0.005;
+      this.rotSpeedX = (Math.random() - 0.5) * 0.006;
+      this.rotSpeedY = (Math.random() - 0.5) * 0.006;
       this.vx = (Math.random() - 0.5) * 0.12;
       this.vy = (Math.random() - 0.5) * 0.12;
     }
@@ -1778,7 +1834,6 @@ function initParticles() {
       if (this.y > height + 100) this.y = -100;
     }
     draw() {
-      // 3D wireframe Octahedron math projected to 2D
       const points = [
         { x: 0, y: -this.size, z: 0 },
         { x: 0, y: this.size, z: 0 },
@@ -1788,19 +1843,15 @@ function initParticles() {
         { x: 0, y: 0, z: this.size }
       ];
 
-      // Rotate points in 3D
       const rotated = points.map(p => {
-        // Rotate X
         let y1 = p.y * Math.cos(this.rotX) - p.z * Math.sin(this.rotX);
         let z1 = p.y * Math.sin(this.rotX) + p.z * Math.cos(this.rotX);
-        // Rotate Y
         let x2 = p.x * Math.cos(this.rotY) + z1 * Math.sin(this.rotY);
         let z2 = -p.x * Math.sin(this.rotY) + z1 * Math.cos(this.rotY);
         
-        // Add perspective and mouse parallax shift
         const scale = 200 / (200 + this.z + z2);
-        const parallaxX = (mouse.x - width / 2) * (12 / this.z);
-        const parallaxY = (mouse.y - height / 2) * (12 / this.z);
+        const parallaxX = (mouse.x - width / 2) * (14 / this.z);
+        const parallaxY = (mouse.y - height / 2) * (14 / this.z);
 
         return {
           x: this.x + x2 * scale + parallaxX,
@@ -1808,34 +1859,44 @@ function initParticles() {
         };
       });
 
-      // Octahedron edges connecting coordinates
       const edges = [
         [0, 2], [0, 3], [0, 4], [0, 5],
         [1, 2], [1, 3], [1, 4], [1, 5],
         [2, 4], [4, 3], [3, 5], [5, 2]
       ];
 
+      // Draw wireframe connecting paths with soft luxury gold stroke
+      ctx.save();
       ctx.beginPath();
       edges.forEach(([u, v]) => {
         ctx.moveTo(rotated[u].x, rotated[u].y);
         ctx.lineTo(rotated[v].x, rotated[v].y);
       });
-
-      ctx.strokeStyle = "rgba(15, 23, 42, 0.035)";
+      ctx.strokeStyle = "rgba(212, 175, 55, 0.18)";
       ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Draw subtle vertices
-      ctx.fillStyle = "rgba(15, 23, 42, 0.05)";
+      // Fill crystal facets with very soft golden aura fill
+      ctx.fillStyle = "rgba(212, 175, 55, 0.035)";
+      ctx.beginPath();
+      ctx.moveTo(rotated[0].x, rotated[0].y);
+      ctx.lineTo(rotated[2].x, rotated[2].y);
+      ctx.lineTo(rotated[4].x, rotated[4].y);
+      ctx.closePath();
+      ctx.fill();
+
+      // Draw vertices with golden glow sparkles
+      ctx.fillStyle = "rgba(212, 175, 55, 0.4)";
       rotated.forEach(p => {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, 2.0, 0, Math.PI * 2);
         ctx.fill();
       });
+      ctx.restore();
     }
   }
 
-  // Holographic Sine Waves / Ribbons in soft contrast
+  // Holographic Sine Waves / Ribbons in soft gold/indigo hues
   class Ribbon {
     constructor(y, color, speed, amp, freq) {
       this.y = y;
@@ -1854,33 +1915,32 @@ function initParticles() {
       
       const step = 20;
       for (let x = 0; x <= width + step; x += step) {
-        // Base sine wave with mouse cursor offset
-        const mouseFactor = (mouse.y - height / 2) * 0.05 * Math.sin(x * 0.002);
+        const mouseFactor = (mouse.y - height / 2) * 0.06 * Math.sin(x * 0.002);
         const dy = Math.sin(x * this.freq + this.phase) * this.amp + mouseFactor;
         ctx.lineTo(x, this.y + dy);
       }
 
       ctx.strokeStyle = this.color;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.2;
       ctx.stroke();
     }
   }
 
   // Initialize objects
-  for (let i = 0; i < 50; i++) particles.push(new Particle());
-  for (let i = 0; i < 4; i++) crystals.push(new Crystal());
+  for (let i = 0; i < 75; i++) particles.push(new Particle());
+  for (let i = 0; i < 5; i++) crystals.push(new Crystal());
   
-  // Auras: Soft cyan, blue and magenta moving blobs
-  auras.push(new Aura("rgba(99, 102, 241, 0.08)", 350)); 
-  auras.push(new Aura("rgba(6, 182, 212, 0.06)", 400));  
-  auras.push(new Aura("rgba(236, 72, 153, 0.04)", 300)); 
+  // Auras: Soft luxurious mesh gradient glows
+  auras.push(new Aura("rgba(99, 102, 241, 0.05)", 400)); // Sapphire Indigo
+  auras.push(new Aura("rgba(212, 175, 55, 0.04)", 350));  // Premium Gold
+  auras.push(new Aura("rgba(236, 72, 153, 0.03)", 300));  // Rose Pink
   
-  // Holographic energy ribbons (using dark slate tint)
-  ribbons.push(new Ribbon(height * 0.3, "rgba(15, 23, 42, 0.01)", 0.002, 35, 0.0015));
-  ribbons.push(new Ribbon(height * 0.7, "rgba(15, 23, 42, 0.01)", 0.0015, 50, 0.001));
+  // Holographic golden-tint ribbons
+  ribbons.push(new Ribbon(height * 0.35, "rgba(212, 175, 55, 0.05)", 0.002, 40, 0.0015));
+  ribbons.push(new Ribbon(height * 0.65, "rgba(99, 102, 241, 0.04)", 0.0015, 45, 0.001));
 
   function animate() {
-    // Fill canvas background
+    // Fill canvas background with clean Apple-like frosted base
     ctx.fillStyle = "#f5f7fc";
     ctx.fillRect(0, 0, width, height);
 
@@ -1892,13 +1952,13 @@ function initParticles() {
 
     // 2. Draw Dot Matrix Tech Grid Texture
     ctx.beginPath();
-    const dotSpacing = 50;
+    const dotSpacing = 60;
     for (let x = 0; x < width; x += dotSpacing) {
       for (let y = 0; y < height; y += dotSpacing) {
         ctx.arc(x, y, 0.8, 0, Math.PI * 2);
       }
     }
-    ctx.fillStyle = "rgba(15, 23, 42, 0.035)";
+    ctx.fillStyle = "rgba(15, 23, 42, 0.02)";
     ctx.fill();
 
     updateMouse();
@@ -1909,35 +1969,16 @@ function initParticles() {
       r.draw();
     });
 
-    // 4. Draw neural network connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        
-        if (dist < 100) {
-          const alpha = (1 - dist / 100) * 0.05 * Math.min(particles[i].alpha, particles[j].alpha);
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(15, 23, 42, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // 5. Draw particles
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    // 6. Draw crystalline forms
+    // 4. Update and draw 3D crystals
     crystals.forEach(c => {
       c.update();
       c.draw();
+    });
+
+    // 5. Update and draw glistening twinkling particles
+    particles.forEach(p => {
+      p.update();
+      p.draw();
     });
 
     requestAnimationFrame(animate);
@@ -1946,52 +1987,6 @@ function initParticles() {
   animate();
 }
 
-// 13. Diagnostic Logger & Mobile Error Catcher
-(function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const logger = document.getElementById("screen-logger");
-  if (!logger) return;
-
-  if (urlParams.get('debug') === 'true') {
-    logger.style.display = 'block';
-  } else {
-    logger.style.display = 'none';
-  }
-
-  const originalLog = console.log;
-  const originalError = console.error;
-
-  console.log = function(...args) {
-    originalLog.apply(console, args);
-    const msg = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
-    const logItem = document.createElement("div");
-    logItem.style.marginBottom = "4px";
-    logItem.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
-    logItem.style.paddingBottom = "2px";
-    logItem.innerHTML = `<span style="color:#38bdf8;">[LOG]</span> ${msg}`;
-    logger.appendChild(logItem);
-    logger.scrollTop = logger.scrollHeight;
-  };
-
-  console.error = function(...args) {
-    originalError.apply(console, args);
-    const msg = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
-    const logItem = document.createElement("div");
-    logItem.style.marginBottom = "4px";
-    logItem.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
-    logItem.style.paddingBottom = "2px";
-    logItem.innerHTML = `<span style="color:#f87171;">[ERR]</span> ${msg}`;
-    logger.appendChild(logItem);
-    logger.scrollTop = logger.scrollHeight;
-  };
-
-  window.onerror = function(message, source, lineno, colno, error) {
-    console.error(`GLOBAL ERROR: ${message} at ${source}:${lineno}:${colno}`);
-    return false;
-  };
-})();
-
-// 3. Category Navigation
 function renderCategories() {
   const categoriesList = [
     { name: "Necklaces", desc: "Chokers, bridal sets and haras", img: "Products/Necklace.jpeg" },
