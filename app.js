@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.1.1";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
@@ -1634,7 +1634,7 @@ function initTicker() {
   
   container.innerHTML = fullTrack.map((img, index) => `
     <div class="ticker-item">
-      <img src="${img}" alt="Luxury jewelry detail ${index}" onerror="this.src='/images/logo.jpg'">
+      <img src="${img}" alt="Luxury jewelry detail ${index}" onerror="this.src='images/logo.jpg'">
       <div class="ticker-glow"></div>
     </div>
   `).join("");
@@ -2081,7 +2081,7 @@ function renderProducts() {
           </svg>
         </button>
         <div class="product-img-wrapper">
-          <img src="${p.image}" class="product-img ${filterClass}" alt="${p.name}" onerror="this.src='/images/logo.jpg'">
+          <img src="${p.image}" class="product-img ${filterClass}" alt="${p.name}" onerror="this.src='images/logo.jpg'">
         </div>
         <div class="product-details">
           <span class="product-cat">${p.category}</span>
@@ -2263,7 +2263,7 @@ function renderCart() {
     <div class="cart-items-list">
       ${cart.map(item => `
         <div class="cart-item">
-          <img src="${item.image}" class="cart-item-img" alt="${item.name}" onerror="this.src='/images/logo.jpg'">
+          <img src="${item.image}" class="cart-item-img" alt="${item.name}" onerror="this.src='images/logo.jpg'">
           <div class="cart-item-details">
             <p class="cart-item-name">${item.name}</p>
             <p class="cart-item-option" style="font-size:0.75rem; color:var(--text-secondary); font-weight: 600; margin-bottom: 0.25rem;">Finish: ${item.option || 'Gold Finish'}</p>
@@ -2377,7 +2377,7 @@ function renderWishlist() {
     <div class="cart-items-list">
       ${wishedItems.map(item => `
         <div class="cart-item">
-          <img src="${item.image}" class="cart-item-img" alt="${item.name}" onerror="this.src='/images/logo.jpg'">
+          <img src="${item.image}" class="cart-item-img" alt="${item.name}" onerror="this.src='images/logo.jpg'">
           <div class="cart-item-details">
             <p class="cart-item-name">${item.name}</p>
             <p class="cart-item-price">${formatPrice(item.price)}</p>
@@ -3007,7 +3007,7 @@ function renderAdminProducts() {
               <td>${p.id}</td>
               <td>
                 <div style="display:flex; align-items:center; gap:0.5rem;">
-                  <img src="${p.image}" style="height:1.75rem; width:1.75rem; object-fit:cover; border-radius:0.25rem;" onerror="this.src='/images/logo.jpg'">
+                  <img src="${p.image}" style="height:1.75rem; width:1.75rem; object-fit:cover; border-radius:0.25rem;" onerror="this.src='images/logo.jpg'">
                   <strong>${p.name}</strong>
                 </div>
               </td>
@@ -3417,7 +3417,7 @@ window.openProductDetailsModal = function(productId) {
     <div class="product-details-img-side">
       <span class="product-details-badge">${p.tag}</span>
       <div style="aspect-ratio: 1/1; width: 100%; display: flex; align-items: center; justify-content: center;">
-        <img src="${p.image}" class="product-details-img ${filterClass}" alt="${p.name}" onerror="this.src='/images/logo.jpg'">
+        <img src="${p.image}" class="product-details-img ${filterClass}" alt="${p.name}" onerror="this.src='images/logo.jpg'">
       </div>
     </div>
     <div class="product-details-info-side">
