@@ -1396,6 +1396,14 @@ const DEFAULT_PRODUCTS = [
   }
 ];
 
+// LocalStorage Cache Invalidation for Version Updates
+const APP_VERSION = "1.1.0";
+if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
+  localStorage.removeItem('mj_products');
+  localStorage.removeItem('mj_orders');
+  localStorage.setItem('mj_app_version', APP_VERSION);
+}
+
 // App States
 let products = [];
 // Environment detection
