@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mahajan Jewellers | Redesigned luxury technology-inspired artificial jewellery. Featuring premium, minimalist glassmorphic design and immersive animations.">
+  <title>Mahajan Jewellers | Premium Monochromatic Collection</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=1.0.7">
+  <link rel="icon" type="image/jpeg" href="/images/logo.jpg">
+</head>
+<body>
+
+  <!-- Global Animated Background Canvas -->
+  <canvas id="global-bg-canvas" class="global-bg-canvas"></canvas>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✨ Free Shipping on orders above ₹1,999! Cash on Delivery Available ✨
+  </div>
+
+  <!-- Floating Glassmorphic Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="#" class="logo-link magnetic" data-strength="15">
+        <img src="images/logo.jpg" class="logo-img" alt="Mahajan Jewellers Logo" onerror="this.src='https://www.mahajanjeweller.in/images/logo.jpg'">
+        <span class="logo-text">MAHAJAN</span>
+      </a>
+
+      <!-- Main Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#collections" class="nav-link">Shop</a>
+        <a href="#bestsellers" class="nav-link">Benefits</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="#" onclick="toggleAdminModal(true); return false;" class="nav-link admin-only-link" style="display: none; color: var(--text-primary); font-weight: 700;">Admin Dashboard</a>
+      </nav>
+
+      <!-- Header Utilities/Actions -->
+      <div class="header-actions">
+        <!-- Wishlist Button -->
+        <button class="action-btn magnetic" data-strength="20" onclick="toggleWishlistDrawer(true)" aria-label="Open Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <span class="badge-count" id="wishlist-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="action-btn magnetic" data-strength="20" onclick="toggleCart(true)" aria-label="Open Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+          <span class="badge-count" id="cart-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- User Authentication Status -->
+        <div id="header-login-btn">
+          <button class="action-btn magnetic" data-strength="20" onclick="toggleAuthModal(true, 'login')" aria-label="Account Login">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Toggle -->
+        <button class="action-btn mobile-nav-toggle magnetic" data-strength="20" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Overlay Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <a href="#" class="mobile-nav-link" onclick="toggleMenu(false)">Home</a>
+      <a href="#collections" class="mobile-nav-link" onclick="toggleMenu(false)">Shop</a>
+      <a href="#bestsellers" class="mobile-nav-link" onclick="toggleMenu(false)">Benefits</a>
+      <a href="#reviews" class="mobile-nav-link" onclick="toggleMenu(false)">Reviews</a>
+      <a href="#faqs" class="mobile-nav-link" onclick="toggleMenu(false)">FAQs</a>
+      <a href="#" onclick="toggleAdminModal(true); toggleMenu(false); return false;" class="mobile-nav-link admin-only-link" style="display: none; color: var(--text-primary); font-weight: 700;">Admin Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    
+    <!-- Hero Slider Background -->
+    <div class="hero-slider" id="hero-slider"></div>
+
+    <!-- Arrow Controls -->
+    <button class="slider-control control-prev magnetic" data-strength="15" onclick="prevHeroSlide()" aria-label="Previous Slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="slider-control control-next" data-strength="15" onclick="nextHeroSlide()" aria-label="Next Slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Slide Indicators -->
+    <div class="slider-indicators" id="slider-indicators"></div>
+  </section>
+
+  <!-- Infinite Luxury Showcase Ticker -->
+  <section class="luxury-ticker-section">
+    <div class="luxury-ticker-container">
+      <div class="luxury-ticker-track" id="luxury-ticker-track"></div>
+    </div>
+  </section>
+
+  <!-- Category Grid Navigation Section -->
+  <section class="categories-section">
+    <div class="container text-center">
+      <span class="badge-gold">Collections</span>
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-desc mx-auto">Explore our curated collections, designed with passion to make your special moments unforgettable.</p>
+      
+      <!-- Category Grid -->
+      <div class="categories-grid" id="categories-grid"></div>
+    </div>
+  </section>
+
+  <!-- Product Catalogue Section -->
+  <section class="catalogue-section" id="collections">
+    <div class="container">
+      <div class="catalogue-header">
+        <div>
+          <span class="badge-gold">Product Catalogue</span>
+          <h2 class="section-title">Shop By Style</h2>
+          <p class="section-desc">Search through our premium catalog of chokers, necklaces, jhumkas, and daily accessories.</p>
+        </div>
+        
+        <!-- Search bar -->
+        <div class="search-bar-container">
+          <input type="text" id="search-input" class="search-input" placeholder="Search product catalogue...">
+          <button class="search-icon-btn" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab active" data-category="All" onclick="filterByCategory('All')">All</button>
+        <button class="filter-tab" data-category="Necklaces" onclick="filterByCategory('Necklaces')">Necklaces</button>
+        <button class="filter-tab" data-category="Earrings" onclick="filterByCategory('Earrings')">Earrings</button>
+        <button class="filter-tab" data-category="Mangalsutra" onclick="filterByCategory('Mangalsutra')">Mangalsutra</button>
+        <button class="filter-tab" data-category="Pendant Sets" onclick="filterByCategory('Pendant Sets')">Pendant Sets</button>
+        <button class="filter-tab" data-category="Jewellery Sets" onclick="filterByCategory('Jewellery Sets')">Jewellery Sets</button>
+      </div>
+
+      <!-- Dynamic Product Grid -->
+      <div class="product-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Bestsellers Benefits Section -->
+  <section class="bestsellers-section" id="bestsellers">
+    <div class="container">
+      <div class="bestsellers-layout">
+        <div>
+          <span class="badge-gold">Bestseller Benefits</span>
+          <h2 class="section-title">A Smarter Way to Shop Mahajan Favourites</h2>
+          <p class="section-desc">Your verified account keeps order history, shipping details, and tracking updates in one single place.</p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="bestsellers-features">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title">Verified Account</h3>
+            <p class="feature-desc">Signup securely with an Indian phone OTP and login anytime with your credentials.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            </div>
+            <h3 class="feature-title">Easy Cart</h3>
+            <p class="feature-desc">Easily update item quantities, review order details, and check delivery rates before checkout.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 class="feature-title">Cash on Delivery</h3>
+            <p class="feature-desc">Place orders with Cash on Delivery while our online payment gateway connection is finalized.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="feature-title">Live Order Updates</h3>
+            <p class="feature-desc">Both customers and admin can monitor real-time order updates dynamically on the system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="text-center">
+        <span class="badge-gold">Customer Reviews</span>
+        <h2 class="section-title">Loved by Jewellery Shoppers</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="stars-row">
+            ${Array(5).fill().map(() => `
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            `).join("")}
+          </div>
+          <p class="review-quote">"The choker looked beautiful and checkout was simple."</p>
+          <p class="review-author">Priya S.</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="stars-row">
+            ${Array(5).fill().map(() => `
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            `).join("")}
+          </div>
+          <p class="review-quote">"Very premium finish for the price. Delivery updates were clear."</p>
+          <p class="review-author">Neha M.</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="stars-row">
+            ${Array(5).fill().map(() => `
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            `).join("")}
+          </div>
+          <p class="review-quote">"I ordered earrings and received the order confirmation instantly."</p>
+          <p class="review-author">Ritika A.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Accordion Section -->
+  <section class="faqs-section" id="faqs">
+    <div class="container">
+      <div class="faqs-layout">
+        <div>
+          <span class="badge-gold">FAQs</span>
+          <h2 class="section-title">Everything Customers Need to Know</h2>
+          <p class="section-desc">Clear answers to some of our most frequently asked questions to reduce hesitation before checkout.</p>
+        </div>
+
+        <div class="faqs-list">
+          <details class="faq-item">
+            <summary>
+              <span>Is this real gold jewellery?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-content">
+              No, Mahajan Jewellers sells premium artificial jewellery for festive, bridal, and everyday styling.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Do I need an account?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes. Creating a secure account or logging in is required before placing an order.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Which payment methods are available?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-content">
+              Cash on Delivery (COD) is fully supported. UPI code scans are also simulated during the checkout step.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Do you ship across India?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes, we ship nationwide. Standard shipping is ₹99 for orders under ₹1,999, and free for all orders above that.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand Info -->
+      <div>
+        <h3 class="footer-brand-title">MAHAJAN</h3>
+        <p class="footer-brand-desc">Offering premium artificial jewelry catering to both traditional and modern sensibilities. Every piece is handcrafted with love and utmost attention to detail.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/mahajan_jewellers_kullu/" target="_blank" class="social-btn magnetic" data-strength="15" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/people/Mahajan-jewellers/61574656834639/" target="_blank" class="social-btn magnetic" data-strength="15" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Collections -->
+      <div>
+        <h4 class="footer-col-title">Collections</h4>
+        <div class="footer-links-list">
+          <a href="#collections" onclick="filterByCategory('Necklaces')" class="footer-link">Necklaces</a>
+          <a href="#collections" onclick="filterByCategory('Earrings')" class="footer-link">Earrings</a>
+          <a href="#collections" onclick="filterByCategory('Mangalsutra')" class="footer-link">Mangalsutras</a>
+          <a href="#collections" onclick="filterByCategory('Pendant Sets')" class="footer-link">Pendant Sets</a>
+          <a href="#collections" onclick="filterByCategory('Jewellery Sets')" class="footer-link">Jewellery Sets</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Support Quick Links -->
+      <div>
+        <h4 class="footer-col-title">Customer Care</h4>
+        <div class="footer-links-list">
+          <a href="#faqs" class="footer-link">FAQs</a>
+          <a href="#bestsellers" class="footer-link">How it Works</a>
+          <a href="https://wa.me/919418718000?text=Hi%20Mahajan%20Jewellers%2C%20I%20need%20support%20with%20my%20order." target="_blank" class="footer-link">Support Chat</a>
+          <a href="#" onclick="toggleAuthModal(true); return false;" class="footer-link">Customer Login</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Showroom Details -->
+      <div>
+        <h4 class="footer-col-title">Showroom Location</h4>
+        <div class="footer-links-list" style="gap:1rem;">
+          <p class="footer-contact-item">📍 Akhara Bazar, Kullu,<br>Himachal Pradesh, India - 175101</p>
+          <p class="footer-contact-item">📞 +91 94187 18000</p>
+          <p class="footer-contact-item">✉️ support@mahajanjeweller.in</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Copyright -->
+    <div class="container footer-bottom">
+      <p class="copyright-text">© 2026 Mahajan Jewellers Kullu. All rights reserved.</p>
+      <p class="copyright-text" style="color:var(--text-primary); cursor:pointer;" onclick="toggleAuthModal(true, 'login')">Admin Portal</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/919418718000?text=Hi%20Mahajan%20Jewellers%2C%20I%20need%20support%20with%20my%20order." target="_blank" class="whatsapp-float magnetic" data-strength="25" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328 0 12.008 0c3.237.001 6.28 1.261 8.568 3.551 2.289 2.289 3.548 5.331 3.547 8.57-.003 6.678-5.329 12-12.009 12-2.002-.001-3.968-.496-5.717-1.437L0 24zm6.59-4.846c1.6.95 3.1 1.45 4.8 1.45 5.3 0 9.6-4.3 9.6-9.6s-4.3-9.6-9.6-9.6-9.6 4.3-9.6 9.6c0 1.9.524 3.4 1.5 5l-.975 3.57 3.65-.96zM15.8 13.5c-.3-.15-1.7-.85-1.95-.95s-.45-.15-.65.15-.75.95-.9 1.15-.3.2-.6.05c-1.85-.92-3.05-1.62-4.25-3.7-.3-.5.3-.45.85-1.55.1-.2 0-.35-.05-.45s-.4-1-.55-1.35c-.15-.35-.3-.3-.45-.3h-.4c-.15 0-.45.05-.65.3s-.9.9-.9 2.2c0 1.3.95 2.5 1.1 2.7.1.15 3.3 5 8 7 .8.35 1.5.4 2.1.3.6-.1 1.7-.7 1.95-1.35.25-.65.25-1.2.15-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <!-- DRAWERS BACKDROP -->
+  <div class="drawer-backdrop" id="cart-backdrop" onclick="toggleCart(false)"></div>
+  <div class="drawer-backdrop" id="wishlist-backdrop" onclick="toggleWishlistDrawer(false)"></div>
+
+  <!-- WISHLIST DRAWER -->
+  <div class="side-drawer" id="wishlist-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Saved Wishlist</h3>
+      <button class="drawer-close" onclick="toggleWishlistDrawer(false)" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer-content" id="wishlist-drawer-content"></div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="side-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Shopping Cart</h3>
+      <button class="drawer-close" onclick="toggleCart(false)" aria-label="Close">✕</button>
+    </div>
+    
+    <!-- Cart contents -->
+    <div class="drawer-content" id="cart-drawer-content"></div>
+    
+    <!-- Cart checkout footer -->
+    <div class="drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <div class="price-summary-row">
+        <span>Subtotal</span>
+        <span id="summary-subtotal">₹0</span>
+      </div>
+      <div class="price-summary-row">
+        <span>Discount (on orders > ₹2000)</span>
+        <span id="summary-discount">₹0</span>
+      </div>
+      <div class="price-summary-row">
+        <span>Shipping Charges</span>
+        <span id="summary-shipping">₹0</span>
+      </div>
+      <div class="price-summary-row total">
+        <span>Grand Total</span>
+        <span id="summary-total">₹0</span>
+      </div>
+
+      <!-- Checkout fields -->
+      <form class="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="checkout-name" class="form-input" placeholder="e.g. Neha Sharma" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" id="checkout-email" class="form-input" placeholder="name@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" id="checkout-phone" class="form-input" value="+91" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Delivery Address</label>
+          <input type="text" id="checkout-address" class="form-input" placeholder="House no, Street area" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input type="text" id="checkout-city" class="form-input" placeholder="e.g. Kullu" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pincode</label>
+            <input type="text" id="checkout-pincode" class="form-input" placeholder="175101" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Payment Method</label>
+          <select id="checkout-payment" class="form-select" onchange="handlePaymentMethodChange(this)" required>
+            <option value="cod" selected>Cash On Delivery (COD)</option>
+            <option value="upi">UPI Scan code simulator</option>
+          </select>
+        </div>
+        
+        <!-- QR Code simulation scanner -->
+        <div class="qr-code-wrapper" id="upi-qr-wrapper" style="display: none;">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=9418718000@okbizaxis&pn=Mahajan%20Jewellers&am=0" class="qr-code-img" alt="Simulated payment QR code">
+          <p class="text-xs text-stone-400">Scan QR Code above to pay simulated total via UPI app before placement.</p>
+        </div>
+
+        <button type="submit" class="btn-primary w-full" style="height: 2.75rem; margin-top: 1rem;">Place COD Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATION FORM MODAL -->
+  <div class="modal-backdrop" id="auth-modal" onclick="if(event.target === this) toggleAuthModal(false)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="drawer-title">My Account</h3>
+        <button class="drawer-close" onclick="toggleAuthModal(false)">✕</button>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-mode="login" onclick="setAuthMode('login')">Login</button>
+        <button class="auth-tab-btn" data-mode="signup" onclick="setAuthMode('signup')">Sign Up</button>
+      </div>
+      <div class="modal-body" id="auth-form-container"></div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS DIALOG MODAL -->
+  <div class="modal-backdrop" id="order-success-modal" onclick="if(event.target === this) closeOrderSuccessModal()">
+    <div class="modal-content" style="max-width: 440px;">
+      <div class="modal-body" id="order-success-body"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN CONTROL PANEL DASHBOARD MODAL -->
+  <div class="modal-backdrop" id="admin-modal" onclick="if(event.target === this) toggleAdminModal(false)">
+    <div class="modal-content admin-modal">
+      <div class="modal-header">
+        <h3 class="drawer-title" style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="color:var(--text-primary);">⚙</span> Admin Control Center
+        </h3>
+        <button class="drawer-close" onclick="toggleAdminModal(false)">✕</button>
+      </div>
+      <div class="modal-body admin-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="admin-sidebar">
+          <button class="admin-menu-item active" data-tab="overview" onclick="setAdminTab('overview')">Overview</button>
+          <button class="admin-menu-item" data-tab="orders" onclick="setAdminTab('orders')">Orders Tracker</button>
+          <button class="admin-menu-item" data-tab="products" onclick="setAdminTab('products')">Product Catalog</button>
+        </nav>
+        
+        <!-- Panels -->
+        <div class="admin-main-content" style="min-width:0;">
+          <div class="admin-panel active" data-panel="overview" id="admin-panel-overview"></div>
+          <div class="admin-panel" data-panel="orders" id="admin-panel-orders"></div>
+          <div class="admin-panel" data-panel="products" id="admin-panel-products"></div>
+        </div>
+      </div>
+    </div>
+  <!-- PRODUCT DETAILS POPUP MODAL -->
+  <div class="modal-backdrop" id="product-details-modal" onclick="if(event.target === this) toggleProductDetailsModal(false)">
+    <div class="modal-content product-details-modal-content">
+      <button class="modal-close-round magnetic" data-strength="15" onclick="toggleProductDetailsModal(false)" aria-label="Close">✕</button>
+      <div class="product-details-layout" id="product-details-layout">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- GreenSock Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- On-Screen Console Logger for Diagnostics -->
+  <div id="screen-logger" style="position: fixed; bottom: 10px; left: 10px; background: rgba(15, 23, 42, 0.95); color: #22c55e; font-family: monospace; font-size: 11px; padding: 12px; max-height: 250px; width: 380px; overflow-y: auto; z-index: 99999; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 10px 30px rgba(0,0,0,0.3); pointer-events: none; line-height: 1.4;">
+    <div style="font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 6px; padding-bottom: 4px; color: #38bdf8;">🔧 System Diagnostics Log:</div>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script src="app.js?v=1.0.7"></script>
+  
+  <script>
+    function toggleMenu(forceState) {
+      const menu = document.getElementById("mobile-menu");
+      if (!menu) return;
+      if (forceState !== undefined) {
+        if (forceState) menu.classList.add("open");
+        else menu.classList.remove("open");
+      } else {
+        menu.classList.toggle("open");
+      }
+    }
+  </script>
+</body>
+</html>

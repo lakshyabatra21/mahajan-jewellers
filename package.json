@@ -1,0 +1,14 @@
+{
+  "name": "mahajan-jeweller-replica",
+  "version": "1.0.0",
+  "description": "Full-stack replica website for Mahajan Jewellers Kullu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "author": "Antigravity",
+  "license": "ISC"
+}

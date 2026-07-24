@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@mahajanjeweller.in",
+    "phone": "+91 9418718000",
+    "password": "admin123",
+    "role": "admin"
+  }
+]

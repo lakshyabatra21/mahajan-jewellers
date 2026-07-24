@@ -1,0 +1,42 @@
+[
+  {
+    "id": "MJ082341",
+    "userId": "cust_1",
+    "total": 2599,
+    "items": [
+      {
+        "id": 1,
+        "name": "Ear Rings 1",
+        "category": "Earrings",
+        "price": 799,
+        "qty": 1,
+        "option": "Gold Finish",
+        "image": "/Products/Earrings/ear rings 1.jpeg"
+      },
+      {
+        "id": 17,
+        "name": "Temple Haar",
+        "category": "Necklaces",
+        "price": 1799,
+        "qty": 1,
+        "option": "Gold Finish",
+        "image": "/Products/WhatsApp Image 2026-07-19 at 2.09.01 PM.jpeg"
+      }
+    ],
+    "paymentMethod": "cod",
+    "paymentStatus": "COD pending",
+    "status": "placed",
+    "customer": {
+      "fullName": "Neha Sharma",
+      "email": "neha.sharma@gmail.com",
+      "phone": "+91 9876543210",
+      "address": "House 45, Mall Road",
+      "city": "Kullu",
+      "pincode": "175101"
+    },
+    "subtotal": 2598,
+    "discount": 0,
+    "shipping": 99,
+    "createdAt": "2026-07-23T16:09:53.000Z"
+  }
+]
