@@ -14,7 +14,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Earrings",
     "isNewArrival": true,
-    "image": "/Products/Earrings/ear rings 1.jpeg"
+    "image": "Products/Earrings/ear rings 1.jpeg"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Earrings",
     "isNewArrival": true,
-    "image": "/Products/Earrings/earring2.png"
+    "image": "Products/Earrings/earring2.png"
   },
   {
     "id": 3,
@@ -40,7 +40,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Earrings",
     "isNewArrival": true,
-    "image": "/Products/Earrings/earring3.png"
+    "image": "Products/Earrings/earring3.png"
   },
   {
     "id": 4,
@@ -53,7 +53,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.20.17 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.20.17 PM.jpeg"
   },
   {
     "id": 5,
@@ -66,7 +66,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.19.54 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.19.54 PM.jpeg"
   },
   {
     "id": 6,
@@ -79,7 +79,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.19.18 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.19.18 PM.jpeg"
   },
   {
     "id": 7,
@@ -92,7 +92,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.17.44 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.17.44 PM.jpeg"
   },
   {
     "id": 8,
@@ -105,7 +105,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.15.32 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.15.32 PM.jpeg"
   },
   {
     "id": 9,
@@ -118,7 +118,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.14.33 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.14.33 PM.jpeg"
   },
   {
     "id": 10,
@@ -131,7 +131,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.13.08 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.13.08 PM.jpeg"
   },
   {
     "id": 11,
@@ -144,7 +144,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.12.35 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.12.35 PM.jpeg"
   },
   {
     "id": 12,
@@ -157,7 +157,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.11.40 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.11.40 PM.jpeg"
   },
   {
     "id": 13,
@@ -170,7 +170,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.11.15 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.11.15 PM.jpeg"
   },
   {
     "id": 14,
@@ -183,7 +183,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.10.39 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.10.39 PM.jpeg"
   },
   {
     "id": 15,
@@ -196,7 +196,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.09.26 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.09.26 PM.jpeg"
   },
   {
     "id": 16,
@@ -209,7 +209,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.09.01 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.09.01 PM.jpeg"
   },
   {
     "id": 17,
@@ -222,7 +222,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.08.38 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.08.38 PM.jpeg"
   },
   {
     "id": 18,
@@ -235,7 +235,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.07.59 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.07.59 PM.jpeg"
   },
   {
     "id": 19,
@@ -248,7 +248,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.07.24 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.07.24 PM.jpeg"
   },
   {
     "id": 20,
@@ -261,7 +261,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.06.22 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.06.22 PM.jpeg"
   },
   {
     "id": 21,
@@ -274,7 +274,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.05.24 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.05.24 PM.jpeg"
   },
   {
     "id": 22,
@@ -287,7 +287,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.04.36 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.04.36 PM.jpeg"
   },
   {
     "id": 23,
@@ -300,7 +300,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.04.27 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.04.27 PM.jpeg"
   },
   {
     "id": 24,
@@ -313,7 +313,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.03.38 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.03.38 PM.jpeg"
   },
   {
     "id": 25,
@@ -326,7 +326,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.03.00 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.03.00 PM.jpeg"
   },
   {
     "id": 26,
@@ -339,7 +339,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 2.01.15 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 2.01.15 PM.jpeg"
   },
   {
     "id": 27,
@@ -352,7 +352,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.57.53 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.57.53 PM.jpeg"
   },
   {
     "id": 28,
@@ -365,7 +365,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.57.40 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.57.40 PM.jpeg"
   },
   {
     "id": 29,
@@ -378,7 +378,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.56.03 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.56.03 PM.jpeg"
   },
   {
     "id": 30,
@@ -391,7 +391,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.54.32 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.54.32 PM.jpeg"
   },
   {
     "id": 31,
@@ -404,7 +404,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.54.00 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.54.00 PM.jpeg"
   },
   {
     "id": 32,
@@ -417,7 +417,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.53.14 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.53.14 PM.jpeg"
   },
   {
     "id": 33,
@@ -430,7 +430,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.51.46 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.51.46 PM.jpeg"
   },
   {
     "id": 34,
@@ -443,7 +443,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.51.15 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.51.15 PM.jpeg"
   },
   {
     "id": 35,
@@ -456,7 +456,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.48.27 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.48.27 PM.jpeg"
   },
   {
     "id": 36,
@@ -469,7 +469,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.47.39 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.47.39 PM.jpeg"
   },
   {
     "id": 37,
@@ -482,7 +482,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.46.45 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.46.45 PM.jpeg"
   },
   {
     "id": 38,
@@ -495,7 +495,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.46.18 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.46.18 PM.jpeg"
   },
   {
     "id": 39,
@@ -508,7 +508,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.45.49 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.45.49 PM.jpeg"
   },
   {
     "id": 40,
@@ -521,7 +521,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.44.52 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.44.52 PM.jpeg"
   },
   {
     "id": 41,
@@ -534,7 +534,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.44.24 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.44.24 PM.jpeg"
   },
   {
     "id": 42,
@@ -547,7 +547,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.43.22 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.43.22 PM.jpeg"
   },
   {
     "id": 43,
@@ -560,7 +560,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.42.53 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.42.53 PM.jpeg"
   },
   {
     "id": 44,
@@ -573,7 +573,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.41.42 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.41.42 PM.jpeg"
   },
   {
     "id": 45,
@@ -586,7 +586,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.40.56 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.40.56 PM.jpeg"
   },
   {
     "id": 46,
@@ -599,7 +599,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.40.35 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.40.35 PM.jpeg"
   },
   {
     "id": 47,
@@ -612,7 +612,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.39.26 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.39.26 PM.jpeg"
   },
   {
     "id": 48,
@@ -625,7 +625,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.39.06 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.39.06 PM.jpeg"
   },
   {
     "id": 49,
@@ -638,7 +638,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.38.16 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.38.16 PM.jpeg"
   },
   {
     "id": 50,
@@ -651,7 +651,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/Temple raani haar.jpeg"
+    "image": "Products/Temple raani haar.jpeg"
   },
   {
     "id": 51,
@@ -664,7 +664,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.37.08 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.37.08 PM.jpeg"
   },
   {
     "id": 52,
@@ -677,7 +677,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.34.19 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.34.19 PM.jpeg"
   },
   {
     "id": 53,
@@ -690,7 +690,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.19.59 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.19.59 PM.jpeg"
   },
   {
     "id": 54,
@@ -703,7 +703,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.23.59 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.23.59 PM.jpeg"
   },
   {
     "id": 55,
@@ -716,7 +716,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/WhatsApp Image 2026-07-19 at 1.25.16 PM.jpeg"
+    "image": "Products/WhatsApp Image 2026-07-19 at 1.25.16 PM.jpeg"
   },
   {
     "id": 56,
@@ -729,7 +729,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/Necklace.jpeg"
+    "image": "Products/Necklace.jpeg"
   },
   {
     "id": 57,
@@ -742,7 +742,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/p-10.png"
+    "image": "Products/New folder/p-10.png"
   },
   {
     "id": 58,
@@ -755,7 +755,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/p-2.png"
+    "image": "Products/New folder/p-2.png"
   },
   {
     "id": 59,
@@ -768,7 +768,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/p-3.png"
+    "image": "Products/New folder/p-3.png"
   },
   {
     "id": 60,
@@ -781,7 +781,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/p-4.png"
+    "image": "Products/New folder/p-4.png"
   },
   {
     "id": 61,
@@ -794,7 +794,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/polki.png"
+    "image": "Products/New folder/polki.png"
   },
   {
     "id": 62,
@@ -807,7 +807,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.17.19 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.17.19 PM.png"
   },
   {
     "id": 63,
@@ -820,7 +820,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.19.49 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.19.49 PM.png"
   },
   {
     "id": 64,
@@ -833,7 +833,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.20.24 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.20.24 PM.png"
   },
   {
     "id": 65,
@@ -846,7 +846,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.21.19 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.21.19 PM.png"
   },
   {
     "id": 66,
@@ -859,7 +859,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.21.42 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.21.42 PM.png"
   },
   {
     "id": 67,
@@ -872,7 +872,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.22.49 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.22.49 PM.png"
   },
   {
     "id": 68,
@@ -885,7 +885,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.23.13 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.23.13 PM.png"
   },
   {
     "id": 69,
@@ -898,7 +898,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.23.45 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.23.45 PM.png"
   },
   {
     "id": 70,
@@ -911,7 +911,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.24.27 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.24.27 PM.png"
   },
   {
     "id": 71,
@@ -924,7 +924,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.25.24 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.25.24 PM.png"
   },
   {
     "id": 72,
@@ -937,7 +937,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.26.00 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.26.00 PM.png"
   },
   {
     "id": 73,
@@ -950,7 +950,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.26.43 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.26.43 PM.png"
   },
   {
     "id": 74,
@@ -963,7 +963,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.26.43 PMd.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.26.43 PMd.png"
   },
   {
     "id": 75,
@@ -976,7 +976,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.27.33 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.27.33 PM.png"
   },
   {
     "id": 76,
@@ -989,7 +989,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.28.08 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.28.08 PM.png"
   },
   {
     "id": 77,
@@ -1002,7 +1002,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.28.53 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.28.53 PM.png"
   },
   {
     "id": 78,
@@ -1015,7 +1015,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.29.15 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.29.15 PM.png"
   },
   {
     "id": 79,
@@ -1028,7 +1028,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.32.01 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.32.01 PM.png"
   },
   {
     "id": 80,
@@ -1041,7 +1041,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.33.53 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.33.53 PM.png"
   },
   {
     "id": 81,
@@ -1054,7 +1054,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.41.11 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.41.11 PM.png"
   },
   {
     "id": 82,
@@ -1067,7 +1067,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.47.26 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.47.26 PM.png"
   },
   {
     "id": 83,
@@ -1080,7 +1080,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.48.56 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.48.56 PM.png"
   },
   {
     "id": 84,
@@ -1093,7 +1093,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.51.07 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.51.07 PM.png"
   },
   {
     "id": 85,
@@ -1106,7 +1106,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 2.59.49 PM (1).png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 2.59.49 PM (1).png"
   },
   {
     "id": 86,
@@ -1119,7 +1119,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Mangalsutra",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.01.45 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.01.45 PM.png"
   },
   {
     "id": 87,
@@ -1132,7 +1132,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.03.58 PM (1).png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.03.58 PM (1).png"
   },
   {
     "id": 88,
@@ -1145,7 +1145,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.03.58 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.03.58 PM.png"
   },
   {
     "id": 89,
@@ -1158,7 +1158,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.04.37 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.04.37 PM.png"
   },
   {
     "id": 90,
@@ -1171,7 +1171,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.04.38 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.04.38 PM.png"
   },
   {
     "id": 91,
@@ -1184,7 +1184,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.06.15 PM (1).png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.06.15 PM (1).png"
   },
   {
     "id": 92,
@@ -1197,7 +1197,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.06.15 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.06.15 PM.png"
   },
   {
     "id": 93,
@@ -1210,7 +1210,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.06.16 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.06.16 PM.png"
   },
   {
     "id": 94,
@@ -1223,7 +1223,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.07.58 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.07.58 PM.png"
   },
   {
     "id": 95,
@@ -1236,7 +1236,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.09.10 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.09.10 PM.png"
   },
   {
     "id": 96,
@@ -1249,7 +1249,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.10.26 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.10.26 PM.png"
   },
   {
     "id": 97,
@@ -1262,7 +1262,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.11.21 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.11.21 PM.png"
   },
   {
     "id": 98,
@@ -1275,7 +1275,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.15.46 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.15.46 PM.png"
   },
   {
     "id": 99,
@@ -1288,7 +1288,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Pendant Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.16.22 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.16.22 PM.png"
   },
   {
     "id": 100,
@@ -1301,7 +1301,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.17.03 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.17.03 PM.png"
   },
   {
     "id": 101,
@@ -1314,7 +1314,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Necklaces",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.17.39 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.17.39 PM.png"
   },
   {
     "id": 102,
@@ -1327,7 +1327,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.18.39 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.18.39 PM.png"
   },
   {
     "id": 103,
@@ -1340,7 +1340,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.35.09 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.35.09 PM.png"
   },
   {
     "id": 104,
@@ -1353,7 +1353,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Earrings",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.35.15 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.35.15 PM.png"
   },
   {
     "id": 105,
@@ -1366,7 +1366,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.35.37 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.35.37 PM.png"
   },
   {
     "id": 106,
@@ -1379,7 +1379,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.35.50 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.35.50 PM.png"
   },
   {
     "id": 107,
@@ -1392,7 +1392,7 @@ const DEFAULT_PRODUCTS = [
     "shade": "from-white via-white to-white",
     "accent": "Jewellery Sets",
     "isNewArrival": true,
-    "image": "/Products/New folder/WhatsApp Image 2026-07-02 at 3.42.09 PM.png"
+    "image": "Products/New folder/WhatsApp Image 2026-07-02 at 3.42.09 PM.png"
   }
 ];
 
