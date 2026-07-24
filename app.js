@@ -1398,6 +1398,11 @@ const DEFAULT_PRODUCTS = [
 
 // App States
 let products = [];
+// Environment detection
+const isStaticEnv = window.location.hostname.includes("github.io") || 
+                    (window.location.hostname.includes("localhost") === false && 
+                     window.location.hostname.includes("127.0.0.1") === false) ||
+                    window.location.protocol === "file:";
 let cart = JSON.parse(localStorage.getItem('mj_cart')) || [];
 let wishlist = JSON.parse(localStorage.getItem('mj_wishlist')) || [];
 let currentUser = JSON.parse(localStorage.getItem('mj_user')) || null;
@@ -1458,21 +1463,9 @@ async function loadProducts() {
     return;
   }
 
-  try {
-    let res = await fetch('/api/products');
-    if (!res.ok) {
-      res = await fetch('./data/products.json');
-    }
-    if (res.ok) {
-      products = await res.json();
-      localStorage.setItem('mj_products', JSON.stringify(products));
-    } else {
-      products = DEFAULT_PRODUCTS;
-    }
-  } catch (err) {
-    console.warn("API products fetch failed, attempting static relative fetch:", err);
+  if (isStaticEnv) {
     try {
-      const res = await fetch('./data/products.json');
+      const res = await fetch('data/products.json');
       if (res.ok) {
         products = await res.json();
         localStorage.setItem('mj_products', JSON.stringify(products));
@@ -1482,6 +1475,20 @@ async function loadProducts() {
     } catch (e) {
       products = DEFAULT_PRODUCTS;
     }
+    renderProducts();
+    return;
+  }
+
+  try {
+    const res = await fetch('/api/products');
+    if (res.ok) {
+      products = await res.json();
+      localStorage.setItem('mj_products', JSON.stringify(products));
+    } else {
+      products = DEFAULT_PRODUCTS;
+    }
+  } catch (err) {
+    products = DEFAULT_PRODUCTS;
   }
   renderProducts();
 }
@@ -1491,6 +1498,11 @@ async function loadOrders() {
   const localOrders = localStorage.getItem('mj_orders');
   if (localOrders) {
     orders = JSON.parse(localOrders);
+    return;
+  }
+
+  if (isStaticEnv) {
+    orders = [];
     return;
   }
 
@@ -1512,8 +1524,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   initParticles();
   initEventListeners();
   
-  await loadProducts();
-  await loadOrders();
+  loadProducts();
+  loadOrders();
   
   renderCategories();
   renderCart();
@@ -1890,7 +1902,6 @@ function initParticles() {
     });
 
     // 4. Draw neural network connections
-    ctx.beginPath();
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -1899,14 +1910,15 @@ function initParticles() {
         
         if (dist < 100) {
           const alpha = (1 - dist / 100) * 0.05 * Math.min(particles[i].alpha, particles[j].alpha);
+          ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = `rgba(15, 23, 42, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
         }
       }
     }
-    ctx.lineWidth = 0.8;
-    ctx.stroke();
 
     // 5. Draw particles
     particles.forEach(p => {
