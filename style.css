@@ -281,7 +281,7 @@ p, span, label, input, select, button {
   height: 90vh;
   width: 100%;
   overflow: hidden;
-  background-color: #000;
+  background: radial-gradient(circle, #1e293b, #0f172a);
   display: flex;
   align-items: center;
 }

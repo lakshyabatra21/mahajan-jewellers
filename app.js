@@ -1429,13 +1429,13 @@ const HERO_ITEMS = [
   {
     title: "Temple Haar Collection",
     desc: "Traditional bridal ornaments reflecting rich heritage, featuring delicate gold overlays and gemstone clusters.",
-    image: "/Products/WhatsApp Image 2026-07-19 at 2.09.01 PM.jpeg",
+    image: "Products/WhatsApp Image 2026-07-19 at 2.09.01 PM.jpeg",
     link: "#collections"
   },
   {
     title: "Designer Necklace Sets",
     desc: "Modern aesthetics blended with heritage patterns. Discover premium artificial necklaces for all occasions.",
-    image: "/Products/WhatsApp Image 2026-07-19 at 1.42.53 PM.jpeg",
+    image: "Products/WhatsApp Image 2026-07-19 at 1.42.53 PM.jpeg",
     link: "#collections"
   }
 ];
