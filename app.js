@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.5";
+const APP_VERSION = "1.1.6";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
