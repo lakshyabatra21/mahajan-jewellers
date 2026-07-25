@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.2";
+const APP_VERSION = "1.1.3";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
@@ -2023,7 +2023,12 @@ window.filterByCategory = function(category) {
   });
 
   renderProducts();
-  document.getElementById("collections")?.scrollIntoView({ behavior: "smooth" });
+  const collectionsElem = document.getElementById("collections");
+  if (collectionsElem) {
+    const yOffset = -115; // Exact offset to clear the fixed glass header and announcement bar
+    const y = collectionsElem.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
 }
 
 // 4. Product Catalogue Functions

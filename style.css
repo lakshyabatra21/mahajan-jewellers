@@ -28,13 +28,13 @@
   --glow-accent: rgba(99, 102, 241, 0.08);
 
   /* Typography */
-  --font-serif: "Space Grotesk", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
 
   /* Shadows */
-  --shadow-premium: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.04);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.08);
+  --shadow-premium: 0 12px 32px -10px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.015);
+  --shadow-glow: 0 0 25px rgba(15, 23, 42, 0.04);
   
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -71,7 +71,11 @@ body {
   height: 100vh;
   z-index: -2;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, #f9fafb 0%, #edf1f7 100%);
+  background: 
+    radial-gradient(circle at 50% 50%, #fcfdfe 0%, #eff2f8 100%),
+    linear-gradient(rgba(15, 23, 42, 0.005) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.005) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
 }
 
 /* Scroll Progress Line */
@@ -123,7 +127,7 @@ p, span, label, input, select, button {
 /* Floating Glassmorphic Header Nav */
 .main-header {
   position: fixed;
-  top: 1.5rem;
+  top: 3.2rem; /* Adjusted to prevent announcement bar overlap */
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 4rem);
@@ -173,9 +177,11 @@ p, span, label, input, select, button {
 }
 
 .logo-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .nav-menu {
@@ -341,6 +347,7 @@ p, span, label, input, select, button {
 }
 
 .hero-title {
+  font-family: var(--font-serif);
   font-size: 3.75rem;
   font-weight: 400;
   line-height: 1.1;
@@ -519,9 +526,11 @@ p, span, label, input, select, button {
 }
 
 .section-title {
-  font-size: 2.75rem;
+  font-family: var(--font-serif);
+  font-size: 2.85rem;
   font-weight: 400;
   margin-bottom: 1rem;
+  letter-spacing: 0.02em;
 }
 
 .section-desc {
@@ -702,13 +711,13 @@ p, span, label, input, select, button {
   padding: 0.75rem;
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition-smooth), border-color var(--transition-fast);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: var(--shadow-premium);
 }
 
 .product-card:hover {
   border-color: var(--text-primary);
-  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
 }
 
 .product-badge {
@@ -931,7 +940,7 @@ p, span, label, input, select, button {
 .feature-card:hover {
   border-color: var(--text-primary);
   transform: translateY(-5px);
-  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
 }
 
 .feature-icon-wrapper {
@@ -986,7 +995,7 @@ p, span, label, input, select, button {
 
 .review-card:hover {
   border-color: var(--text-primary);
-  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(15, 23, 42, 0.02);
 }
 
 .stars-row svg {
@@ -1402,7 +1411,7 @@ p, span, label, input, select, button {
 
 /* Checkout Form elements */
 .checkout-form {
-  margin-top: 1.5rem;
+  margin-top: 3.2rem; /* Adjusted to prevent announcement bar overlap */
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -1718,7 +1727,7 @@ p, span, label, input, select, button {
 @media (max-width: 768px) {
   /* Header adjustments */
   .main-header {
-    top: 1rem;
+    top: 3.0rem; /* Adjusted to prevent announcement bar overlap */
     width: calc(100% - 2rem);
   }
   .nav-menu {
@@ -1733,6 +1742,7 @@ p, span, label, input, select, button {
     height: 80vh;
   }
   .hero-title {
+  font-family: var(--font-serif);
     font-size: 2.75rem;
   }
   .hero-desc {
@@ -1853,7 +1863,7 @@ p, span, label, input, select, button {
 
 .product-details-badge {
   position: absolute;
-  top: 1.5rem;
+  top: 3.2rem; /* Adjusted to prevent announcement bar overlap */
   left: 1.5rem;
   background: #ffffff;
   color: var(--text-primary);
@@ -1946,7 +1956,7 @@ p, span, label, input, select, button {
   grid-template-columns: 1fr 1fr;
   gap: 0.85rem;
   border-top: 1px solid rgba(15, 23, 42, 0.06);
-  padding-top: 1.5rem;
+  padding-top: 3.2rem; /* Adjusted to prevent announcement bar overlap */
   margin-bottom: 2.5rem;
 }
 
