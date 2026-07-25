@@ -1207,20 +1207,35 @@ p, span, label, input, select, button {
 }
 
 /* --- GLASMOPHIC SIDE DRAWERS & MODALS --- */
-.drawer-backdrop, .modal-backdrop {
+.drawer-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.15);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 120;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
 }
-
-.drawer-backdrop.open, .modal-backdrop.open {
+.drawer-backdrop.open {
   opacity: 1;
   pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 170;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-backdrop.open {
+  display: flex !important;
 }
 
 .side-drawer {
@@ -1475,11 +1490,7 @@ p, span, label, input, select, button {
 
 /* General Modal Styling */
 .modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--glass-border);
@@ -1488,12 +1499,13 @@ p, span, label, input, select, button {
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(15, 23, 42, 0.15);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 160;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 180;
 }
 
 .modal-backdrop.open .modal-content {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
 }
 
 .modal-header {
@@ -1833,15 +1845,12 @@ p, span, label, input, select, button {
   background: var(--bg-light);
   border: 1px solid var(--glass-border);
   box-shadow: 0 50px 100px -20px rgba(15, 23, 42, 0.25);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-backdrop.open .product-details-modal-content {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
 }
 
 .product-details-layout {

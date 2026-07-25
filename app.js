@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.3";
+const APP_VERSION = "1.1.4";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
@@ -1644,6 +1644,13 @@ function initTicker() {
 function initParticles() {
   const canvas = document.getElementById("global-bg-canvas");
   if (!canvas) return;
+  
+  // Turn off background particles on mobile/tablet to ensure buttery smooth scrolling
+  if (window.innerWidth < 1024) {
+    canvas.style.display = "none";
+    return;
+  }
+  
   const ctx = canvas.getContext("2d");
   
   let width, height;
@@ -1769,11 +1776,7 @@ function initParticles() {
       const color = this.baseColor + twinkleAlpha + ")";
       
       if (this.isStar) {
-        // Draw 4-point glowing star
-        ctx.save();
-        ctx.shadowBlur = Math.random() < 0.1 ? 8 : 4;
-        ctx.shadowColor = this.baseColor.includes("212") ? "#d4af37" : "#ffffff";
-        
+        // Draw 4-point glowing star (removed heavy shadowBlur for 60FPS)
         let cx = this.x;
         let cy = this.y;
         let rot = Math.PI / 2 * 3;
@@ -1796,7 +1799,6 @@ function initParticles() {
         ctx.closePath();
         ctx.fillStyle = color;
         ctx.fill();
-        ctx.restore();
       } else {
         // Draw standard soft circle particle
         ctx.beginPath();
@@ -3279,6 +3281,16 @@ function initEventListeners() {
 // 11. GSAP Custom Animations (60 FPS)
 function initGSAPTrigger() {
   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+  
+  // On mobile/tablet, instantly show items to prevent empty white spaces and scroll lag
+  if (window.innerWidth < 1024) {
+    gsap.utils.toArray('.section-title, .badge-gold, .section-desc, .category-card, .feature-card, .review-card, .faq-item').forEach(el => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+    return;
+  }
+  
   gsap.registerPlugin(ScrollTrigger);
 
   // Fade Up titles and text on scroll
