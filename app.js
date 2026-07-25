@@ -1397,7 +1397,7 @@ const DEFAULT_PRODUCTS = [
 ];
 
 // LocalStorage Cache Invalidation for Version Updates
-const APP_VERSION = "1.1.4";
+const APP_VERSION = "1.1.5";
 if (localStorage.getItem('mj_app_version') !== APP_VERSION) {
   localStorage.removeItem('mj_products');
   localStorage.removeItem('mj_orders');
@@ -1643,13 +1643,10 @@ function initTicker() {
 // Canvas-based background particles
 function initParticles() {
   const canvas = document.getElementById("global-bg-canvas");
-  if (!canvas) return;
-  
-  // Turn off background particles on mobile/tablet to ensure buttery smooth scrolling
-  if (window.innerWidth < 1024) {
-    canvas.style.display = "none";
-    return;
+  if (canvas) {
+    canvas.style.display = "none"; // Hide canvas globally
   }
+  return; // Stop animation loop completely to run at buttery 120 FPS using CSS backgrounds
   
   const ctx = canvas.getContext("2d");
   

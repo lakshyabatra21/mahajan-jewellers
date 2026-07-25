@@ -63,6 +63,22 @@ body {
   background-color: var(--bg-dark);
 }
 
+/* GPU-Accelerated Hardware Gradients & Micro Grid Texture (0% CPU load!) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(236, 72, 153, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #fcfdfe 0%, #edf1f7 100%),
+    linear-gradient(rgba(15, 23, 42, 0.006) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.006) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+}
+
 /* Global Animated Background Canvas */
 .global-bg-canvas {
   position: fixed;
@@ -2077,3 +2093,9 @@ p, span, label, input, select, button {
   }
 }
 
+
+/* Always stack form fields in side drawer to prevent squishing overlaps */
+.side-drawer .form-row {
+  grid-template-columns: 1fr !important;
+  gap: 0.5rem;
+}
